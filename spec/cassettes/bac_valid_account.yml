@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bankaccountchecker.com/listener.php?bankaccount=12345678&format=json&key=dummy_user&password=dummy_password&sortcode=557030&type=uk
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Feb 2015 16:47:40 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '268'
+      Content-Type:
+      - text/html
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"resultCode":"01","resultDescription":"Sortcode and Bank Account are
+        valid","accountProperties":{"institution":"NATIONAL WESTMINSTER BANK PLC","branch":"WARLINGHAM","fast_payment":"true","bacs_credit":"true","bacs_direct_debit":"true","chaps":"true","cheque":"true"}}'
+    http_version:
+  recorded_at: Mon, 02 Feb 2015 16:47:41 GMT
+recorded_with: VCR 2.9.3
