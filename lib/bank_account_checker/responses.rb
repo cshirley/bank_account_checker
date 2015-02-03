@@ -1,7 +1,7 @@
 
 class ApiException < StandardError;end
 class AuthenticationError < StandardError;end
-class InvalidBankAccount < StandardError;end
+class InvalidBankAccountError < StandardError;end
 module Faraday
   class Response::BankAccountChecker< Response::Middleware
 
@@ -16,7 +16,7 @@ module Faraday
       result_code = body["resultCode"].to_i
       raise AuthenticationError.new(body["resultDescription"]) if result_code == 5
       raise ApiException.new(body["resultDescription"]) if result_code > 5
-      raise InvalidBankAccount.new(body["resultDescription"]) if result_code != 1
+      raise InvalidBankAccountError.new(body["resultDescription"]) if result_code != 1
     end
   end
 end

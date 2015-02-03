@@ -25,13 +25,14 @@ describe "client" do
     describe "Bank Accounts" do
       it "should fail with invalid format" do
         VCR.use_cassette("bac_invalid_account") do
-          expect{client.get_bank_account("111111", "1111111")}.to raise_error(InvalidBankAccount)
+          expect{client.get_bank_account("111111", "1111111")}.to raise_error(InvalidBankAccountError)
         end
       end
       it "should work wih valid account details" do
         VCR.use_cassette("bac_valid_account") do
           expect( client.get_bank_account("557030", "12345678")['resultCode'].to_i).to eql(1)
         end
+
       end
     end
 end
