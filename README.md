@@ -24,13 +24,13 @@ Or install it yourself as:
 
 ### Get Bank Account Details
 
-    ```ruby
-    client = BankAccountChecker::Client.new("user_name", "password")
-    ```
+```ruby
+client = BankAccountChecker::Client.new("user_name", "password")
+```
+To Check a bank account:
 
-    To Check a bank account:
-    ```ruby
-    json_response = client.get_bank_account("557030", "12345678")
+```ruby
+json_response = client.get_bank_account("557030", "12345678")
 
     {"resultCode"=>"01",
      "resultDescription"=>"Sortcode and Bank Account are valid",
@@ -41,25 +41,25 @@ Or install it yourself as:
                               "bacs_direct_debit"=>"true",
                               "chaps"=>"true",
                               "cheque"=>"true"}}
-    ```
+```
 ### Exceptions
-    Authentication Failure
+Authentication Failure
 
-    ```ruby
-    AuthenticationError
-    ```
+```ruby
+AuthenticationError
+```
 
-    Invalid Bank Account
+Invalid Bank Account
 
-    ```ruby
-    InvalidBankAccountError
-    ```
+```ruby
+InvalidBankAccountError
+```
 
-    Server Generated API Error
+Server Generated API Error
 
-    ```ruby
-    ApiException
-    ```
+```ruby
+ApiException
+```
 
 ## Contributing
 
