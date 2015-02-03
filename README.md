@@ -1,4 +1,5 @@
 [![Circle CI](https://circleci.com/gh/cshirley/bank_account_checker.svg?style=svg)](https://circleci.com/gh/cshirley/bank_account_checker)
+[![Coverage Status](https://coveralls.io/repos/cshirley/bank_account_checker/badge.svg)](https://coveralls.io/r/cshirley/bank_account_checker)
 # BankAccountChecker
 
 Simple API wrapper for http://www.bankaccountchecker.com
