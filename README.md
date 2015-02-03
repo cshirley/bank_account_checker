@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Get Bank Account Details
+Get Bank Account Details:
 
 ```ruby
 client = BankAccountChecker::Client.new("user_name", "password")
@@ -43,19 +43,19 @@ json_response = client.get_bank_account("557030", "12345678")
                               "cheque"=>"true"}}
 ```
 ### Exceptions
-Authentication Failure
+Authentication Failure:
 
 ```ruby
 AuthenticationError
 ```
 
-Invalid Bank Account
+Invalid Bank Account:
 
 ```ruby
 InvalidBankAccountError
 ```
 
-Server Generated API Error
+Server Generated API Error:
 
 ```ruby
 ApiException
