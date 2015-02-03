@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bankaccountchecker.com/listener.php?bankaccount=1111111&format=json&key=dummy_user&password=dummy_password&sortcode=111111&type=uk
+    uri: https://www.bankaccountchecker.com/listener.php?bankaccount=11111111&format=json&key=dummy_user&password=dummy_password&sortcode=111111&type=uk
     body:
       encoding: US-ASCII
       string: ''

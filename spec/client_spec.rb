@@ -6,26 +6,37 @@ describe "client" do
   let(:client) { BankAccountChecker::Client.new(api_user, api_password) }
   let(:client_invalid) { BankAccountChecker::Client.new("foo", "bar") }
 
-    describe "intialise" do
+    describe "client setup" do
       it "should return the correct base URL" do
         expect(client.base_url).to eql "https://www.bankaccountchecker.com/listener.php"
       end
-
       it "should format the api request" do
         url = client.make_request_url("", {zzzz: "foobar"})
         expect(url).to eql "?format=#{client.format}&key=#{api_user}&password=#{api_password}&type=#{client.query_type}&zzzz=foobar"
       end
+    end
 
+    describe "authentication" do
       it "should fail with invalid credentials" do
         VCR.use_cassette("bac_invalid_credential") do
           expect { client_invalid.get_bank_account("211111", "11111111")}.to raise_error(AuthenticationError)
         end
       end
     end
+
+    describe "client side validation" do
+      it "should fail if sort code is the wrong length" do
+          expect { client.get_bank_account("2111", "11111111")}.to raise_error(ArgumentError)
+      end
+      it "should fail if account number is the wrong length" do
+          expect { client.get_bank_account("111111", "1111111")}.to raise_error(ArgumentError)
+      end
+    end
+
     describe "Bank Accounts" do
       it "should fail with invalid format" do
         VCR.use_cassette("bac_invalid_account") do
-          expect{client.get_bank_account("111111", "1111111")}.to raise_error(InvalidBankAccountError)
+          expect{client.get_bank_account("111111", "11111111")}.to raise_error(InvalidBankAccountError)
         end
       end
       it "should work wih valid account details" do
