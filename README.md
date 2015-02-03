@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ### Get Bank Account Details
+
     ```ruby
     client = BankAccountChecker::Client.new("user_name", "password")
     ```
@@ -43,14 +44,19 @@ Or install it yourself as:
     ```
 ### Exceptions
     Authentication Failure
+
     ```ruby
     AuthenticationError
     ```
+
     Invalid Bank Account
+
     ```ruby
     InvalidBankAccountError
     ```
+
     Server Generated API Error
+
     ```ruby
     ApiException
     ```
