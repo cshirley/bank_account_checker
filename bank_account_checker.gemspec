@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["clive.shirley@mac.com"]
   spec.summary       = %q{Simple wrapper for bankaccountchecker.com}
   spec.description   = %q{Implements a simple API wrapper for bankaccountchecker.com using faraday}
-  spec.homepage      = ""
+  spec.homepage      = "https:/github.com/cshirley/bank_account_checker"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
