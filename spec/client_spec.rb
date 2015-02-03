@@ -19,7 +19,7 @@ describe "client" do
     describe "authentication" do
       it "should fail with invalid credentials" do
         VCR.use_cassette("bac_invalid_credential") do
-          expect { client_invalid.get_bank_account("211111", "11111111")}.to raise_error(AuthenticationError)
+          expect { client_invalid.get_bank_account("211111", "11111111")}.to raise_error(BankAccountChecker::AuthenticationError)
         end
       end
     end
@@ -36,7 +36,7 @@ describe "client" do
     describe "Bank Accounts" do
       it "should fail with invalid format" do
         VCR.use_cassette("bac_invalid_account") do
-          expect{client.get_bank_account("111111", "11111111")}.to raise_error(InvalidBankAccountError)
+          expect{client.get_bank_account("111111", "11111111")}.to raise_error(BankAccountChecker::InvalidBankAccountError)
         end
       end
       it "should work wih valid account details" do

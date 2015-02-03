@@ -46,19 +46,19 @@ json_response = client.get_bank_account("557030", "12345678")
 Authentication Failure:
 
 ```ruby
-AuthenticationError
+BankAccountChecker::AuthenticationError
 ```
 
 Invalid Bank Account:
 
 ```ruby
-InvalidBankAccountError
+BankAccountChecker::InvalidBankAccountError
 ```
 
 Server Generated API Error:
 
 ```ruby
-ApiException
+BankAccountChecker::ApiException
 ```
 
 ## Contributing
